@@ -1,5 +1,36 @@
 .App {
   text-align: center;
+
+  overflow-x: hidden;
+
+  position: relative;
+
+  
+}
+
+.scrollTop {
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 2222;
+
+  height: 100vh;
+  width: 100vw;
+
+  object-fit: cover;
 }
 
 .App-logo {

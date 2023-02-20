@@ -1,0 +1,141 @@
+.modalWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    z-index: 22;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw !important;
+    height: 100% !important;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgba(0, 45, 89, 1);
+
+    padding: 26px 28px 39px 28px;
+
+    border-radius: 26px;
+
+    width: 450px;
+
+    color: #fff;
+
+    overflow: hidden;
+
+    z-index: 2;
+
+    .inputBox {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 17px;
+
+        &:first-child {
+            margin-top: 20px;
+            label {
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: calc(100% + 2px);
+                    bottom: 4px;
+                    display: block;
+                    width: 500px;
+                    height: 1px;
+                    background-color: #fff;
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    right: calc(100% + 2px);
+                    bottom: 4px;
+                    display: block;
+                    width: 500px;
+                    height: 1px;
+                    background-color: #fff;
+                }
+            }
+        }
+
+        label {
+            margin-bottom: 10px;
+            margin-left: 30px;
+            align-self: start;
+            font-size: 20px;
+            font-family: 'Gotham Pro Bold';
+        }
+
+        input {
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: #fff;
+            border: none;
+            // outline: auto;
+
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+            &::placeholder {
+                font-family: 'Gotham Pro';
+            }
+        }
+    }
+
+    .checkbox {
+        display: flex;
+        align-items: center;
+        margin-bottom: 14px;
+        margin-left: 30px;
+        cursor: pointer;
+        &:last-child {
+            margin-bottom: 0px;
+        }
+
+        label {
+            cursor: pointer;
+        }
+        input {
+            visibility: hidden;
+            width: 0;
+            height: 0;
+            position: absolute;
+        }
+        img {
+            margin-right: 15px;
+        }
+
+    }
+
+    .buttonGroup {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+
+        .formButton {
+            font-size: 20px !important;
+            text-transform: none !important;
+
+            &:last-child {
+                background-color: rgba(255, 255, 255, 0.7);
+            }
+        }
+    }
+
+    p.success {
+        margin: 0 !important;
+        padding: 0 !important;
+        color: #FFFFFF !important;
+        background-color: inherit !important;
+        font-size: 16px !important;
+        font-family: 'Gotham Pro' !important;
+        text-transform: none !important;
+        text-align: center !important;
+    }
+}

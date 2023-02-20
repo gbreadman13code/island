@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Footer from "./components/elements/Footer/Footer";
+import DocScheme from "./components/screens/DocScheme/DocScheme";
+import MainScreen from "./components/screens/MainScreen/MainScreen";
+import Renders from "./components/screens/Renders/Renders";
+import Services from "./components/screens/Services/Services";
+import SliderScreen from "./components/screens/SliderScreen/SliderScreen";
+import TerritoryScheme from "./components/screens/TerritoryScheme/TerritoryScheme";
+
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import getNews from "./functions/getNews";
+import News from "./components/screens/News/News";
+
+import { Routes, Route } from "react-router-dom";
+import SingleNews from "./components/screens/SingleNews/SingleNews";
+import AllScreens from "./components/screens/AllScreens/AllScreens";
+import getWeather from './functions/getWeather';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getNews());
+    dispatch(getWeather());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<AllScreens />} />
+      <Route path="news/:slug" element={<SingleNews />} />
+    </Routes>
   );
 }
 

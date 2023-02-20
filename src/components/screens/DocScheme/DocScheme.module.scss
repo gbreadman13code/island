@@ -1,0 +1,99 @@
+.labelDecor {
+    // width: 100%;
+    // height: auto;
+    object-fit: cover;
+
+    position: absolute;
+    right: 0;
+}
+
+.wrap {
+    display: flex;
+    gap: 30px;
+
+    color: #ffffff;
+    position: relative;
+
+    margin-top: 150px;
+
+    scroll-margin-top: 0px;
+    background: url('../../../assets/images/isolones.svg') center center no-repeat;
+    background-size: cover;
+
+    .legend {
+        flex: 1.2;
+        max-width: max-content;
+        min-height: 100%;
+        background-color: #002D59;
+
+        h2 {
+            font-family: 'Gotham Pro Bold';
+            padding: 19px 30px;
+            text-transform: uppercase;
+            text-align: left;
+
+            border-bottom: 3px solid #ffffff;
+            box-sizing: border-box;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-top: 28px;
+            margin-right: 50px;
+            li {
+                display: flex;
+                align-items: center;
+                gap: 27px;
+
+                margin-bottom: 23px;
+
+                img {
+                }
+
+                span {
+                    text-align: left;
+                    font-family: 'Gotham Pro';
+                    font-size: 24px;
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+
+    .map {
+        flex: 1.8;
+
+        position: relative;
+        h2 {
+            color: #002D59;
+            font-family: 'Gotham Pro Bold';
+            width: auto;
+            display: flex;
+            margin-left: 150px;
+
+            &::before {
+                content: '';
+                display: block;
+                height: 16px;
+                margin-top: 2px;
+                width: 5px;
+                background-color: #002D59;
+                margin-right: 5px;
+            }
+        }
+        div {
+        // position: relative;
+        //     .greyWaves {
+        //         position: absolute;
+        //         left: -110px;
+        //         bottom: 100px;
+        //     }
+            .mapImg {
+                margin-top: 57px;
+                // max-height: 100%;
+                width: 100%;
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,111 @@
+.newsWrap {
+    padding-top: 50px;
+    padding-bottom: 75px;
+    padding-left: 100px;
+
+    .header {
+        margin-bottom: 100px;
+        display: flex;
+        justify-content: start;
+
+        position: relative;
+        overflow: hidden;
+
+        h2 {
+            text-align: left;
+
+            z-index: 2;
+
+            padding-left: 17px;
+    
+            border-left: 5px solid rgba(0, 45, 89, 1);
+            padding-right: 93px;
+            background-color: #fff;
+        }
+
+        img {
+            position: absolute;
+            right: 0;
+        }
+    }
+}
+
+.newsList {
+    display: flex;
+    align-items: stretch;
+    gap: 45px;
+
+    padding-bottom: 20px;
+    // overflow-x: auto;
+
+    .newsItem {
+        display: flex;
+        flex-direction: column;
+
+        min-width: 316px;
+        max-width: 316px;
+
+        cursor: pointer;
+
+        &:hover {
+            .show_more {
+                color: rgba(22, 51, 86, 1);
+            }
+        }
+
+        &:last-child {
+            padding-right: 45px;
+        }
+
+        img {
+            width: 100%;
+            height: 178px;
+            margin-bottom: 27px;
+
+            object-fit: cover;
+            object-position: center;
+        }
+
+        p {
+            font-size: 24px;
+            line-height: 26px;
+            font-family: 'Gotham Pro Bold';
+
+            text-align: left;
+
+            text-transform: uppercase;
+            color: rgba(22, 51, 86, 1);
+
+            margin-bottom: 20px;
+        }
+
+        .description p {
+            font-size: 24px;
+            line-height: 26px;
+            font-family: 'Gotham Pro';
+            text-transform: none;
+
+            text-align: left;
+            color: rgba(22, 51, 86, 1);
+
+            margin-bottom: 15px;
+        }
+
+        span {
+            &.show_more {
+                font-size: 24px;
+                line-height: 26px;
+
+                font-family: 'Gotham Pro Bold';
+                text-transform: uppercase;
+
+                text-align: left;
+                color: rgba(199, 198, 199, 1);
+
+                text-decoration: underline;
+
+                transition: 0.3s;
+            }
+        }
+    }
+}

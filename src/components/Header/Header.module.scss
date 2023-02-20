@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 20px 0;
+
+    // color: #ffffff;
+    font-size: 22px;
+    li {
+        a {
+            position: relative;
+            transition: .3s;
+            overflow: hidden;
+
+            img {
+                display: block;
+        
+                position: absolute;
+                left: -29px;
+                top: -3px;
+                transition: .3s;
+        
+                width: 19px;
+                height: 24px;
+        
+                object-position: center -30px;
+            }
+
+            &:hover {
+                img {
+                    object-position: center;
+                    background-position-y: center;
+                }
+            }
+        }
+
+        
+
+        
+    }
+}
