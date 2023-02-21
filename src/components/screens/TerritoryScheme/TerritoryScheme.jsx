@@ -3,6 +3,7 @@ import styles from "./TerritoryScheme.module.scss";
 
 import Map from "../../../assets/images/map.png";
 
+
 // import { ReactComponent as Visit } from "../../../assets/images/territory-scheme-icons/visit.svg";
 
 // Legends icons
@@ -147,6 +148,7 @@ const TerritoryScheme = () => {
             </li>
           </ul>
         </div>
+
         <div className={styles.map}>
           <div>
             <div className={styles.map_container}>
@@ -220,7 +222,7 @@ const TerritoryScheme = () => {
                 >
               <img
                 src={map_slip}
-                
+
                 style={{ width: iconsWidth }}
                 alt=""
               />
@@ -237,13 +239,13 @@ const TerritoryScheme = () => {
                 >
               <img
                 src={map_seing}
-                
+
                 style={{ width: iconsWidth }}
                 alt=""
-                
+
               />
                 <IconLabel text={"Смотровая <br/> и маяк"} flag={hoveredIcon} />
-              
+
               </div>
               <div className={
                   hoveredIcon === "club"
@@ -255,10 +257,10 @@ const TerritoryScheme = () => {
                 >
               <img
                 src={map_club}
-                
+
                 style={{ width: iconsWidth }}
                 alt=""
-                
+
               />
                 <IconLabel text={"Клубный <br/> дом"} flag={hoveredIcon} />
 
@@ -271,10 +273,10 @@ const TerritoryScheme = () => {
                 >
               <img
                 src={map_gas}
-                
+
                 style={{ width: iconsWidth }}
                 alt=""
-                
+
               />
                 <IconLabel text={"ПЗС"} flag={hoveredIcon} isLeft={true} />
 

@@ -5,7 +5,6 @@ import { ReactComponent as Anchor } from '../../../assets/images/anchor.svg';
 // import className from
 
 const Burger = ({active, setActive}) => {
-  console.log()
   return (
 
     <button className={active ? `${styles.burger} ${styles.burger__pressed}` : styles.burger}

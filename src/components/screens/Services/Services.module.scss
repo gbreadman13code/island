@@ -87,11 +87,11 @@
 
             @media(max-width: 1300px) {
                 font-size: 11px;
-                line-height: 12px;
+                line-height: 13px;
             }
             @media(max-width: 768px) {
-                font-size: 9px;
-                line-height: 10px;
+                // font-size: 9px;
+                // line-height: 10px;
             }
 
             strong {
@@ -106,8 +106,8 @@
                 }
 
                 @media(max-width: 768px) {
-                    font-size: 10px;
-                    line-height: 10px;
+                    // font-size: 10px;
+                    // line-height: 10px;
                 }
             }
         }
@@ -118,6 +118,14 @@
                     display: none;
                 }
             }
+
+            &:nth-child(2) {
+                img {
+                    margin-bottom: 11px;
+                }
+            }
+
+
         }
     }
 }
