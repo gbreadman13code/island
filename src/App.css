@@ -5,7 +5,7 @@
 
   position: relative;
 
-  
+
 }
 
 .scrollTop {
@@ -14,8 +14,9 @@
     right: 80px;
 
     cursor: pointer;
-
     transition: 0.2s;
+    -webkit-tap-highlight-color: transparent;
+
 }
 
 .loader {
@@ -57,6 +58,20 @@
 
 .App-link {
   color: #61dafb;
+}
+
+@media(max-width: 1300px) {
+  .scrollTop {
+    bottom: 50px;
+    right: 50px;
+  }
+}
+
+@media(max-width: 768px) {
+  .scrollTop {
+    bottom: 30px;
+    right: 30px;
+  }
 }
 
 @keyframes App-logo-spin {
