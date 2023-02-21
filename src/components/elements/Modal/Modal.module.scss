@@ -4,7 +4,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-
     z-index: 22;
 
     display: flex;
@@ -18,19 +17,12 @@
 .modal {
     display: flex;
     flex-direction: column;
-
     background-color: rgba(0, 45, 89, 1);
-
     padding: 26px 28px 39px 28px;
-
     border-radius: 26px;
-
     width: 450px;
-
     color: #fff;
-
     overflow: hidden;
-
     z-index: 2;
 
     .inputBox {
@@ -96,6 +88,7 @@
         margin-bottom: 14px;
         margin-left: 30px;
         cursor: pointer;
+
         &:last-child {
             margin-bottom: 0px;
         }
