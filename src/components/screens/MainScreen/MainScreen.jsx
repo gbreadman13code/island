@@ -10,8 +10,8 @@ import { ReactComponent as MainTitle } from "../../../assets/images/main-title.s
 import { useSelector } from 'react-redux';
 
 const MainScreen = () => {
-  const [airTemperature, setAirTemperature] = useState(false) 
-  const [waterTemperature, setWaterTemperature] = useState(false) 
+  const [airTemperature, setAirTemperature] = useState(false)
+  const [waterTemperature, setWaterTemperature] = useState(false)
 
   const airTemperatureRedux = useSelector(state => state.weather.air_temperature)
   const waterTemperatureRedux = useSelector(state => state.weather.water_temperature)
@@ -29,13 +29,7 @@ const MainScreen = () => {
   return (
     <div className={styles.mainScreen}>
       <Container>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            height: "100%",
-          }}
+        <div className={styles.title}
         >
           <Header isMainPage={true} />
           <div className={styles.text}>
@@ -43,7 +37,7 @@ const MainScreen = () => {
               <MainTitle />
               {/* <h1>ОСТРОВ</h1>
               <h2>Речной клуб</h2> */}
-              <p>Современная лодочная станция на Енисее</p>
+              <p>Современная лодочная станция на&nbsp;Енисее</p>
               <p>Акватория Абаканской протоки</p>
               <p>Место для прогулок и отдыха</p>
             </div>

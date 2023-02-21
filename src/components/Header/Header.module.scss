@@ -1,32 +1,63 @@
 .header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+    column-gap: 40px;
     align-items: center;
-    justify-content: space-between;
 
     width: 100%;
-
     padding: 20px 0;
 
-    // color: #ffffff;
-    font-size: 22px;
+    @media (max-width: 1300px) {
+        column-gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        column-gap: unset;
+        // height: 90vh;
+    }
+
     li {
         a {
             position: relative;
             transition: .3s;
             overflow: hidden;
 
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 21px;
+            white-space: nowrap;
+
+            @media (max-width: 1300px) {
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 15px;
+            }
+
+            @media (max-width: 850px) {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 15px;
+            }
+
+
             img {
                 display: block;
-        
+
                 position: absolute;
                 left: -29px;
                 top: -3px;
                 transition: .3s;
-        
+
                 width: 19px;
                 height: 24px;
-        
+
                 object-position: center -30px;
+
+                @media (max-width: 1300px) {
+                    display: none;
+                }
             }
 
             &:hover {
@@ -35,10 +66,138 @@
                     background-position-y: center;
                 }
             }
+
+
+        }
+        svg {
+            width: 190px;
+            height: 190px;
+
+            path {
+                fill: white;
+            }
+
+            @media (max-width: 1300px) {
+                width: 130px;
+                height: 130px;
+            }
+
+            @media (max-width: 768px) {
+                height: 75px;
+                width: 75px;
+            }
         }
 
-        
+        &:nth-child(4) {
+            justify-self: center;
+        }
+    }
 
-        
+    @media(max-width: 768px) {
+        // background-color: red;
+
+        svg {
+            path {
+                fill: transparent;
+                transition: fill .3s linear;
+            }
+        }
+    }
+
+    &__active {
+        svg {
+            position: relative;
+            z-index: 101;
+
+            path {
+                fill: transparent;
+            }
+        }
+    }
+}
+
+.mobile_menu {
+    // outline: 2px solid red;
+
+    position: absolute;
+    top: 0;
+    right: -100vw;
+    z-index: 9;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    box-sizing: border-box;
+
+    padding: 120px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    transition: right .3s ease;
+
+    a {
+        color: #002D59 !important;
+        font-weight: 400;
+        font-size: 18px !important;
+        line-height: 22px !important;
+        padding: 15px 0;
+        display: block;
+    }
+
+    li {
+        position: relative;
+        display: block;
+        width: 100%;
+        text-align: right;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #C7C6C7;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: 0;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: #C7C6C7;
+        }
+
+        &:last-child {
+            position: absolute;
+            bottom: 40px;
+            // left: 0;
+            right: 0;
+
+            width: 100%;
+            margin-bottom: 0;
+            // height: 100%;
+
+            & > svg {
+                width: 100%;
+                height: 100%;
+
+                path {
+                    fill: #002D59;
+                }
+            }
+
+            &::before, &::after {
+                display: none;
+            }
+        }
+
+    }
+
+    &__active {
+        right: 0;
     }
 }

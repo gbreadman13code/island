@@ -10,13 +10,13 @@ const Temperature = ({ cloud, water }) => {
       <div className={styles.wrap}>
         {cloud && (
           <div className={styles.item}>
-            <span>{cloud}С°</span>
+            <span>{cloud}°С</span>
             <img src={CloudIcon} alt="Воздух" />
           </div>
         )}
         {water && (
           <div className={styles.item}>
-            <span>{water}С°</span>
+            <span>{water}°С</span>
             <img src={DribIcon} alt="Вода" />
           </div>
         )}

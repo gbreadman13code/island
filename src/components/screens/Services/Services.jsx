@@ -15,7 +15,7 @@ const Services = () => {
     <Container>
       <div className={styles.wrap} id="about">
         <div><img src={ParkingIcon} alt="" /><span><strong>120-130 мест</strong> причал-стоянка <br />на воде</span></div>
-        <div><img src={GarageIcon} alt="" /><span><strong>900 м2</strong> теплый ангар <br /> для хранения</span></div>
+        <div><img src={GarageIcon} alt="" /><span><strong>900 м<sup>2</sup></strong> теплый ангар <br /> для хранения</span></div>
         <div><img src={ServicesIcon} alt="" /><span><strong>{'>'} 100 услуг</strong> сервис для лодок <br /> и моторов</span></div>
         <div><img src={SlipIcon} alt="" /><span><strong>21 m x 6 m</strong> Оборудованный <br /> слип</span></div>
         <div><img src={GasIcon} alt="" /><span><strong>1–ая в регионе </strong> Плавучая<br /> Заправочная <br /> станция</span></div>

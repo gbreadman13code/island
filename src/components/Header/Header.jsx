@@ -1,17 +1,23 @@
-import React, { useEffect } from "react";
-import Logo from "../elements/Logo/Logo";
-
+import React, { useEffect, useLayoutEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Header.module.scss";
 
+import Burger from '../elements/Burger/Burger';
+import UseWindowSize from '../elements/UseWindowSize/UseWindowSize';
 import WhiteAnchor from "../../assets/images/white-anchor.svg";
 import BlueAnchor from "../../assets/images/blue-anchor.svg";
 import LogoColor from "../elements/LogoColor/LogoColor";
-import { useNavigate, useLocation } from "react-router-dom";
+
+import { ReactComponent as Logo } from '../../assets/images/logo.svg';
+import { ReactComponent as FooterDecor } from '../../assets/images/footer-decor.svg';
 
 const Header = ({ isMainPage }) => {
-  const location = useLocation();
 
+  const [width, height] = UseWindowSize();
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const [activeBurger, setActiveBurger] = useState(false);
 
   const scrollTo = (e, anchor) => {
     e.preventDefault();
@@ -55,96 +61,202 @@ const Header = ({ isMainPage }) => {
       return () => clearTimeout(timer)
     }
   }, [location]);
+
+
   return (
-    <ul className={styles.header} id="header"> 
-      <li>
-        <a
-          href="#"
-          onClick={(e) => scrollTo(e, "about")}
-          style={
-            isMainPage
-              ? { color: "rgba(255, 255, 255, 1)" }
-              : { color: "rgba(0, 45, 89, 1)" }
-          }
-        >
-          {" "}
-          <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> О проекте
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          onClick={(e) => scrollTo(e, "garage")}
-          style={
-            isMainPage
-              ? { color: "rgba(255, 255, 255, 1)" }
-              : { color: "rgba(0, 45, 89, 1)" }
-          }
-        >
-          {" "}
-          <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Ангар
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          onClick={(e) => scrollTo(e, "docScheme")}
-          style={
-            isMainPage
-              ? { color: "rgba(255, 255, 255, 1)" }
-              : { color: "rgba(0, 45, 89, 1)" }
-          }
-        >
-          {" "}
-          <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Схема
-          причала
-        </a>
-      </li>
-      {isMainPage ? <Logo /> : <LogoColor />}
-      <li>
-        <a
-          href="#"
-          onClick={(e) => scrollTo(e, "garage")}
-          style={
-            isMainPage
-              ? { color: "rgba(255, 255, 255, 1)" }
-              : { color: "rgba(0, 45, 89, 1)" }
-          }
-        >
-          {" "}
-          <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Ремонт и
-          сервис
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          onClick={(e) => scrollTo(e, "news")}
-          style={
-            isMainPage
-              ? { color: "rgba(255, 255, 255, 1)" }
-              : { color: "rgba(0, 45, 89, 1)" }
-          }
-        >
-          {" "}
-          <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Новости
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          onClick={(e) => scrollTo(e, "contacts")}
-          style={
-            isMainPage
-              ? { color: "rgba(255, 255, 255, 1)" }
-              : { color: "rgba(0, 45, 89, 1)" }
-          }
-        >
-          {" "}
-          <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Контакты
-        </a>
-      </li>
-    </ul>
+    <nav>
+    {width > 768 ?
+      <ul className={styles.header} id="header">
+        <li>
+          <a
+            href="#"
+            onClick={(e) => scrollTo(e, "about")}
+            style={
+              isMainPage
+                ? { color: "rgba(255, 255, 255, 1)" }
+                : { color: "rgba(0, 45, 89, 1)" }
+            }
+          >
+            {" "}
+            <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> О проекте
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            onClick={(e) => scrollTo(e, "garage")}
+            style={
+              isMainPage
+                ? { color: "rgba(255, 255, 255, 1)" }
+                : { color: "rgba(0, 45, 89, 1)" }
+            }
+          >
+            {" "}
+            <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Ангар
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            onClick={(e) => scrollTo(e, "docScheme")}
+            style={
+              isMainPage
+                ? { color: "rgba(255, 255, 255, 1)" }
+                : { color: "rgba(0, 45, 89, 1)" }
+            }
+          >
+            {" "}
+            <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Схема причала
+          </a>
+        </li>
+        {isMainPage ? <li><Logo /></li> : <li><LogoColor /></li>}
+        <li>
+          <a
+            href="#"
+            onClick={(e) => scrollTo(e, "garage")}
+            style={
+              isMainPage
+                ? { color: "rgba(255, 255, 255, 1)" }
+                : { color: "rgba(0, 45, 89, 1)" }
+            }
+          >
+            {" "}
+            <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Ремонт и сервис
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            onClick={(e) => scrollTo(e, "news")}
+            style={
+              isMainPage
+                ? { color: "rgba(255, 255, 255, 1)" }
+                : { color: "rgba(0, 45, 89, 1)" }
+            }
+          >
+            {" "}
+            <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Новости
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            onClick={(e) => scrollTo(e, "contacts")}
+            style={
+              isMainPage
+                ? { color: "rgba(255, 255, 255, 1)" }
+                : { color: "rgba(0, 45, 89, 1)" }
+            }
+          >
+            {" "}
+            <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Контакты
+          </a>
+        </li>
+      </ul>
+
+        :
+
+        <div className={activeBurger ? `${styles.header} ${styles.header__active}` : styles.header} id="header" onClick={(() => {activeBurger ? setActiveBurger(false) : setActiveBurger(true)})}>
+          <Logo />
+
+          <Burger
+            active={activeBurger}
+            setActive={setActiveBurger}
+          />
+
+          <ul className={activeBurger ? `${styles.mobile_menu} ${styles.mobile_menu__active}` : styles.mobile_menu}>
+            <li>
+              <a
+                href="#"
+                onClick={(e) => scrollTo(e, "about")}
+                style={
+                  isMainPage
+                    ? { color: "rgba(255, 255, 255, 1)" }
+                    : { color: "rgba(0, 45, 89, 1)" }
+                }
+              >
+                {" "}
+                <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> О проекте
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={(e) => scrollTo(e, "garage")}
+                style={
+                  isMainPage
+                    ? { color: "rgba(255, 255, 255, 1)" }
+                    : { color: "rgba(0, 45, 89, 1)" }
+                }
+              >
+                {" "}
+                <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Ангар
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={(e) => scrollTo(e, "docScheme")}
+                style={
+                  isMainPage
+                    ? { color: "rgba(255, 255, 255, 1)" }
+                    : { color: "rgba(0, 45, 89, 1)" }
+                }
+              >
+                {" "}
+                <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Схема причала
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={(e) => scrollTo(e, "garage")}
+                style={
+                  isMainPage
+                    ? { color: "rgba(255, 255, 255, 1)" }
+                    : { color: "rgba(0, 45, 89, 1)" }
+                }
+              >
+                {" "}
+                <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Ремонт и сервис
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={(e) => scrollTo(e, "news")}
+                style={
+                  isMainPage
+                    ? { color: "rgba(255, 255, 255, 1)" }
+                    : { color: "rgba(0, 45, 89, 1)" }
+                }
+              >
+                {" "}
+                <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Новости
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={(e) => scrollTo(e, "contacts")}
+                style={
+                  isMainPage
+                    ? { color: "rgba(255, 255, 255, 1)" }
+                    : { color: "rgba(0, 45, 89, 1)" }
+                }
+              >
+                {" "}
+                <img src={isMainPage ? WhiteAnchor : BlueAnchor} alt="" /> Контакты
+              </a>
+            </li>
+            <li><FooterDecor /></li>
+          </ul>
+        </div>
+
+
+
+    }
+    </nav>
   );
 };
 
