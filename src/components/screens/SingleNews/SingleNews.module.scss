@@ -21,7 +21,8 @@
 
                 color: #002D59;
 
-                font-family: 'Gotham Pro Bold';
+                font-family: gotham;
+                font-weight: 700;
                 text-transform: uppercase;
             }
 
@@ -31,8 +32,8 @@
 
                 color: rgba(179, 192, 206, 1);
 
-
-                font-family: 'Gotham Pro Bold';
+                font-family: gotham;
+                font-weight: 700;
                 text-transform: uppercase;
 
                 display: flex;
@@ -59,7 +60,7 @@
             display: flex;
             gap: 45px;
             .news_photo {
-                
+
 
                 img {
                     width: 316px;
@@ -74,14 +75,14 @@
                 p {
                     font-size: 17px;
                     line-height: 31px;
-    
+
                     color: rgba(22, 51, 86, 1);
                 }
 
                 a {
                     font-size: 17px;
                     line-height: 31px;
-    
+
                     color: rgba(22, 51, 86, 1);
 
                     text-decoration: underline;
