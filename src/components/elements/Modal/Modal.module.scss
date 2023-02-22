@@ -4,7 +4,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    
     z-index: 22;
 
     display: flex;
@@ -18,20 +17,17 @@
 .modal {
     display: flex;
     flex-direction: column;
-
     background-color: rgba(0, 45, 89, 1);
-
     padding: 26px 28px 39px 28px;
-
     border-radius: 26px;
-
     width: 450px;
-
     color: #fff;
-
     overflow: hidden;
-
     z-index: 2;
+
+    @media(max-width: 768px) {
+        background-color: #fff;
+    }
 
     .inputBox {
         display: flex;
@@ -42,6 +38,9 @@
             margin-top: 20px;
             label {
                 position: relative;
+
+
+
                 &::after {
                     content: '';
                     position: absolute;
@@ -51,6 +50,11 @@
                     width: 500px;
                     height: 1px;
                     background-color: #fff;
+
+                    @media(max-width: 768px) {
+                        background-color: #D9D9D9;
+                        height: 2px;
+                    }
                 }
                 &::before {
                     content: '';
@@ -61,6 +65,11 @@
                     width: 500px;
                     height: 1px;
                     background-color: #fff;
+
+                    @media(max-width: 768px) {
+                        background-color: #D9D9D9;
+                        height: 2px;
+                    }
                 }
             }
         }
@@ -69,8 +78,17 @@
             margin-bottom: 10px;
             margin-left: 30px;
             align-self: start;
+            font-family: gotham;
+            font-weight: 700;
             font-size: 20px;
-            font-family: 'Gotham Pro Bold';
+
+            @media(max-width: 768px) {
+                font-size: 16px;
+                line-height: 19px;
+                color: #002D59;
+                font-weight: 600;
+            }
+
         }
 
         input {
@@ -82,8 +100,16 @@
 
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
+            @media(max-width: 768px) {
+                box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
+            }
+
             &::placeholder {
-                font-family: 'Gotham Pro';
+                font-family: gotham;
+
+                @media(max-width: 768px) {
+                    color:#002D59;
+                }
             }
         }
     }
@@ -94,6 +120,7 @@
         margin-bottom: 14px;
         margin-left: 30px;
         cursor: pointer;
+
         &:last-child {
             margin-bottom: 0px;
         }
@@ -109,6 +136,13 @@
         }
         img {
             margin-right: 15px;
+        }
+
+        @media(max-width: 768px) {
+            label {
+                color: #002D59;
+                font-weight: 600;
+            }
         }
 
     }
@@ -134,7 +168,7 @@
         color: #FFFFFF !important;
         background-color: inherit !important;
         font-size: 16px !important;
-        font-family: 'Gotham Pro' !important;
+        font-family: gotham !important;
         text-transform: none !important;
         text-align: center !important;
     }

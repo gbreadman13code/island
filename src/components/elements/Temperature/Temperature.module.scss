@@ -7,12 +7,27 @@
         align-items: center;
 
         span {
+            font-weight: 400;
             font-size: 43px;
+            line-height: 41px;
             color: #ffffff;
+
+            @media(max-width: 1300px) {
+                font-size: 30px;
+                line-height: 28px;
+            }
+
+            @media(max-width: 768px) {
+                font-size: 22px;
+                line-height: 22px;
+            }
+
+
         }
 
         img {
             height: 27px;
+            margin-left: 10px;
         }
 
         &:first-child {
@@ -28,6 +43,20 @@
                 height: 100%;
                 background-color: #fff;
             }
+
+            @media(max-width: 768px) {
+                margin-right: 50px;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    right: -30px;
+                    width: 3px;
+                    height: 100%;
+                    background-color: #fff;
+                }
+            }
         }
-    }    
+    }
 }

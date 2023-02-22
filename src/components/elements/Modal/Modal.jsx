@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Modal.module.scss";
 
-import EmptyCheckbox from "../../../assets/images/emptyCheckbox.svg";
-import ActiveCheckbox from "../../../assets/images/activeCheckbox.svg";
+// import EmptyCheckbox from "../../../assets/images/emptyCheckbox.svg";
+// import ActiveCheckbox from "../../../assets/images/activeCheckbox.svg";
 import { sendform } from "../../../functions/sendform";
+
+import { ReactComponent as EmptyCheckbox } from '../../../assets/images/emptyCheckbox.svg';
+import { ReactComponent as ActiveCheckbox } from '../../../assets/images/activeCheckbox.svg';
 
 const Modal = ({ close, withBG }) => {
   const [name, setName] = useState();
@@ -85,7 +88,7 @@ const Modal = ({ close, withBG }) => {
             <div className={styles.inputBox}>
               <label htmlFor="phone">Номер телефона</label>
               <input
-                placeholder="+7 (123) 456‒78‒90"
+                placeholder="+7 (123) 456-78-90"
                 type="text"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
@@ -101,7 +104,7 @@ const Modal = ({ close, withBG }) => {
                 onChange={() => setGarage(!garage)}
               />
               <img
-                src={garage ? ActiveCheckbox : EmptyCheckbox}
+                src={garage ? <ActiveCheckbox /> : <EmptyCheckbox />}
                 alt=""
                 onClick={() => setGarage(!garage)}
               />
@@ -115,7 +118,7 @@ const Modal = ({ close, withBG }) => {
                 onChange={() => setDoc(!doc)}
               />
               <img
-                src={doc ? ActiveCheckbox : EmptyCheckbox}
+                src={doc ? <ActiveCheckbox /> : <EmptyCheckbox />}
                 alt=""
                 onClick={() => setDoc(!doc)}
               />

@@ -1,0 +1,52 @@
+#renderSlider {
+  max-height: 300px;
+
+  h3 {
+    font-family: gotham;
+  }
+
+  img {
+    height: 300px;
+  }
+
+  // outline: 2px solid red;
+}
+
+.slick-dots {
+  bottom: 10px;
+
+  li {
+    width: 7px;
+    height: 7px;
+    margin: 0 3px;
+  }
+
+  button {
+    width: 7px;
+    height: 7px;
+    padding: 0 !important;
+    box-shadow: none;
+
+    &:active {
+      opacity: .25;
+    }
+
+    &:focus {
+      opacity: .25;
+    }
+
+    &::before {
+      width: 7px;
+      height: 7px;
+      color: white !important;
+    }
+  }
+
+  .slick-active {
+    button {
+      &:focus {
+        opacity: 1;
+      }
+    }
+  }
+}

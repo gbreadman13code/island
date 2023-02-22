@@ -2,10 +2,15 @@
     // width: 100%;
     // height: auto;
     object-fit: cover;
+    display: block;
 
     // position: absolute;
     // left: 0;
     width: 100%;
+
+    @media(max-width: 768px) {
+        display: none;
+    }
 }
 
 .wrap {
@@ -15,11 +20,26 @@
     color: #ffffff;
     position: relative;
 
+    @media(max-width: 768px) {
+        margin-top: 50px;
+    }
+
     // max-height: 100vh;
     .chip {
         position: absolute;
         right: 50px;
         top: -70px;
+
+        @media(max-width: 1300px) {
+            width: 118px;
+            height: 63px;
+            right: 10px;
+            top: -60px;
+        }
+
+        @media(max-width: 768px) {
+            display: none;
+        }
     }
 
     .legend {
@@ -29,49 +49,103 @@
         background-color: #002D59;
 
         h2 {
-            font-family: 'Gotham Pro Bold';
+            font-family: gotham;
+            font-weight: 700;
+            font-size: 24px;
             width: 100%;
-            padding: 15px 0;
+            padding: 16px 0 13px;
             text-align: center;
             text-transform: uppercase;
 
             border-bottom: 3px solid #ffffff;
+
+            @media(max-width: 1300px) {
+                font-size: 16px;
+                line-height: 18px;
+                padding: 12px 0 10px;
+            }
+            @media(max-width: 768px) {
+                font-size: 14px;
+                line-height: 16px;
+                padding: 10px 0 8px;
+            }
         }
 
         ul {
-            margin-left: 91px;
-            margin-top: 28px;
-            margin-right: 63px;
-            margin-bottom: 60px;
+            // margin-left: 91px;
+            // margin-top: 28px;
+            // margin-right: 63px;
+            // margin-bottom: 60px;
+
+            margin: 28px 63px 60px 90px;
 
             display: flex;
             flex-direction: column;
             align-items: start;
             justify-content: start;
 
+            @media(max-width: 1300px) {
+                margin: 27px 40px 30px 67px;
+            }
+
+            @media(max-width: 768px) {
+                margin: 15px 15px 20px 15px;
+            }
+
             li {
                 display: flex;
                 align-items: center;
                 justify-content: start;
 
-                margin-bottom: 20px;
+
 
                 transition: 0.2s;
 
                 cursor: pointer;
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+
+                    @media(max-width: 1300px) {
+                        margin-bottom: 14px;
+                    }
+                }
 
                 img {
                     // width: 64px;
                     // height: 64px;
                     // object-fit: contain;
                     margin-right: 25px;
+                    display: block;
+
+                    @media(max-width: 1300px) {
+                        width: 43px;
+                        height: 43px;
+                    }
+                    @media(max-width: 1300px) {
+                        width: 27px;
+                        height: 27px;
+                        margin-right: 15px;
+                    }
                 }
 
                 span {
                     text-align: left;
-                    font-family: 'Gotham Pro';
+                    font-family: gotham;
+                    font-weight: 600;
+
                     font-size: 24px;
                     line-height: 26px;
+
+                    @media(max-width: 1300px) {
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+
+                    @media(max-width: 768px) {
+                        font-size: 14px;
+                        line-height: 17px;
+                    }
                 }
 
                 &.activeIcon {
@@ -85,13 +159,32 @@
         flex: 1.8;
         max-height: 100%;
 
+        @media(max-width: 768px) {
+            position: absolute;
+            top: 0;
+            z-index: -1;
+        }
+
         div {
         position: relative;
         height: 100%;
+
             .map_container {
                 margin-top: 57px;
                 height: min-content;
                 position: relative;
+
+                @media(max-width: 768px)  {
+                    margin-top: -40px;
+                    height: 100% !important;
+                    width: auto;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
 
                 // absolute positioned icons
                 .map_garage {
@@ -158,14 +251,14 @@
                                 position: absolute;
                                 top: -22px;
                                 right: 0px;
-    
+
                                 background-color: rgba($color: #FFFFFF, $alpha: 0.75);
 
                                 color: rgba(0, 45, 89, 1);
                                 font-size: 19px;
                                 line-height: 20px;
                                 text-transform: uppercase;
-    
+
                                 width: max-content;
                                 height: max-content;
 
@@ -181,7 +274,7 @@
                                 }
                             }
                         }
-                        
+
                     }
                 }
 
@@ -249,14 +342,14 @@
                                 position: absolute;
                                 top: -22px;
                                 right: 0px;
-    
+
                                 background-color: rgba($color: #FFFFFF, $alpha: 0.75);
 
                                 color: rgba(0, 45, 89, 1);
                                 font-size: 19px;
                                 line-height: 20px;
                                 text-transform: uppercase;
-    
+
                                 width: max-content;
                                 height: max-content;
 
@@ -272,7 +365,7 @@
                                 }
                             }
                         }
-                        
+
                     }
                 }
 
@@ -343,14 +436,14 @@
                                 position: absolute;
                                 top: -22px;
                                 right: 0px;
-    
+
                                 background-color: rgba($color: #FFFFFF, $alpha: 0.75);
 
                                 color: rgba(0, 45, 89, 1);
                                 font-size: 19px;
                                 line-height: 20px;
                                 text-transform: uppercase;
-    
+
                                 width: max-content;
                                 height: max-content;
 
@@ -366,7 +459,7 @@
                                 }
                             }
                         }
-                        
+
                     }
                 }
 
@@ -430,14 +523,14 @@
                                 position: absolute;
                                 top: -22px;
                                 right: 0px;
-    
+
                                 background-color: rgba($color: #FFFFFF, $alpha: 0.75);
 
                                 color: rgba(0, 45, 89, 1);
                                 font-size: 19px;
                                 line-height: 20px;
                                 text-transform: uppercase;
-    
+
                                 width: max-content;
                                 height: max-content;
 
@@ -453,7 +546,7 @@
                                 }
                             }
                         }
-                        
+
                     }
                 }
 
@@ -517,14 +610,14 @@
                                 position: absolute;
                                 top: -22px;
                                 right: 0px;
-    
+
                                 background-color: rgba($color: #FFFFFF, $alpha: 0.75);
 
                                 color: rgba(0, 45, 89, 1);
                                 font-size: 19px;
                                 line-height: 20px;
                                 text-transform: uppercase;
-    
+
                                 width: max-content;
                                 height: max-content;
 
@@ -540,7 +633,7 @@
                                 }
                             }
                         }
-                        
+
                     }
                 }
 
@@ -604,14 +697,14 @@
                                 position: absolute;
                                 top: -22px;
                                 right: 0px;
-    
+
                                 background-color: rgba($color: #FFFFFF, $alpha: 0.75);
 
                                 color: rgba(0, 45, 89, 1);
                                 font-size: 19px;
                                 line-height: 20px;
                                 text-transform: uppercase;
-    
+
                                 width: max-content;
                                 height: max-content;
 
@@ -627,7 +720,7 @@
                                 }
                             }
                         }
-                        
+
                     }
                 }
 
@@ -691,14 +784,14 @@
                                 position: absolute;
                                 top: -22px;
                                 right: 0px;
-    
+
                                 background-color: rgba($color: #FFFFFF, $alpha: 0.75);
 
                                 color: rgba(0, 45, 89, 1);
                                 font-size: 19px;
                                 line-height: 20px;
                                 text-transform: uppercase;
-    
+
                                 width: max-content;
                                 height: max-content;
 
@@ -714,7 +807,7 @@
                                 }
                             }
                         }
-                        
+
                     }
                 }
 
@@ -778,14 +871,14 @@
                                 position: absolute;
                                 top: -22px;
                                 right: 0px;
-    
+
                                 background-color: rgba($color: #FFFFFF, $alpha: 0.75);
 
                                 color: rgba(0, 45, 89, 1);
                                 font-size: 19px;
                                 line-height: 20px;
                                 text-transform: uppercase;
-    
+
                                 width: max-content;
                                 height: max-content;
 
@@ -801,7 +894,7 @@
                                 }
                             }
                         }
-                        
+
                     }
                 }
 
@@ -865,14 +958,14 @@
                                 position: absolute;
                                 top: -22px;
                                 right: 0px;
-    
+
                                 background-color: rgba($color: #FFFFFF, $alpha: 0.75);
 
                                 color: rgba(0, 45, 89, 1);
                                 font-size: 19px;
                                 line-height: 20px;
                                 text-transform: uppercase;
-    
+
                                 width: max-content;
                                 height: max-content;
 
@@ -889,7 +982,7 @@
                                 }
                             }
                         }
-                        
+
                     }
                 }
 
@@ -904,9 +997,24 @@
                 position: absolute;
                 left: -110px;
                 bottom: 100px;
+
+                @media(max-width: 1300px) {
+                    width: 138px;
+                    height: 135px;
+                    left: -90px;
+                    bottom: 90px;
+                }
+                @media(max-width: 768px) {
+                    width: 67px;
+                    height: 16px;
+                    left: -60px;
+                    bottom: 80px;
+                }
             }
-            
+
         }
-        
+
     }
 }
+
+

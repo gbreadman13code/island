@@ -62,7 +62,7 @@
     .smallImg {
         flex: 1;
         transition: 0.4s;
-        
+
         div {
             position: relative;
 
@@ -89,7 +89,7 @@
                     left: 0;
 
                     transition: 0.2s;
-                    
+
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -111,8 +111,8 @@
         img {
             width: 100%;
         }
-        
-        
+
+
         p {
             font-size: 24px;
             line-height: 26px;
@@ -121,4 +121,18 @@
             transition: 0.2s;
         }
     }
+}
+
+.slider {
+    margin-top: 40px;
+}
+
+.title {
+    font-family: gotham;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 14px;
+    text-transform: uppercase;
+    text-align-last: left;
+    padding: 0 0 10px 20px;
 }
