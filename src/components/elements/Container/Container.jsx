@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './Container.module.scss';
 
 const Container = ({ children }) => {
   return (
-    <div style={{padding: '0px 85px', height: '100%'}}>
+    <div className={styles.container}>
       {children}
     </div>
   )

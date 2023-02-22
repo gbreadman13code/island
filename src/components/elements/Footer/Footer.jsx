@@ -2,7 +2,8 @@ import React from 'react';
 
 import styles from './Footer.module.scss';
 
-import Logo from '../Logo/Logo';
+// import Logo from '../Logo/Logo';
+import { ReactComponent as Logo } from '../../../assets/images/logo.svg';
 import FooterDecor from '../../../assets/images/footer-decor.svg';
 
 import Phone from '../../../assets/images/contacts-icons/phone.svg';
@@ -19,7 +20,7 @@ const Footer = () => {
         <Logo />
         <div className={styles.line_between}></div>
         <ul>
-          <li> <img src={Phone} alt="" /> <a href="tel:+7 (391) 254‒62‒00">+7 (391) 254‒62‒00</a></li>
+          <li> <img src={Phone} alt="" /> <a href="tel:+73912546200">+7 (391) 254-62-00</a></li>
           <li> <img src={Email} alt="" /> <a href="mailto:marketing@ostrovkrsk.ru">marketing@ostrovkrsk.ru</a></li>
           <li> <img src={Location} alt="" /> <a>г. Красноярск, <br /> ул. остров Отдыха</a></li>
           <div className={styles.socials}>

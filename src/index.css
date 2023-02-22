@@ -1,18 +1,35 @@
 @font-face {
-  font-family: "Gotham Pro";
-  src: url("./assets/fonts/GothamPro/gothampro.ttf");
-  font-weight: 400;
-  font-style: normal;
+	font-family: gotham;
+	font-display: swap;
+	src: url("./assets/fonts/GothamPro-Light.woff2") format("woff2"), url("./assets/fonts/GothamPro-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
 }
 @font-face {
-  font-family: "Gotham Pro Bold";
-  src: url("./assets/fonts/GothamPro/gothampro_bold.ttf");
-  font-style: bold;
+	font-family: gotham;
+	font-display: swap;
+	src: url("./assets/fonts/GothamPro.woff2") format("woff2"), url("./assets/fonts/GothamPro.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: gotham;
+	font-display: swap;
+	src: url("./assets/fonts/GothamPro-Medium.woff2") format("woff2"), url("./assets/fonts/GothamPro-Medium.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: gotham;
+	font-display: swap;
+	src: url("./assets/fonts/GothamPro-Bold.woff2") format("woff2"), url("./assets/fonts/GothamPro-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
 }
 
 body {
   margin: 0;
-  font-family: "Gotham Pro";
+  font-family: gotham;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -36,6 +53,7 @@ a {
 }
 
 strong {
-  font-family: 'Gotham Pro Bold';
+  font-family: gotham;
+  font-weight: 700;
   color: #002D59;
 }
