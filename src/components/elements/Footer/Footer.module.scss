@@ -54,10 +54,11 @@
             li {
                 display: flex;
                 align-items: start;
+                margin-bottom: 17px;
 
-                // &:not(:last-of-type) {
-                    margin-bottom: 17px;
-                // }
+                @media(max-width: 768px) {
+                    margin-bottom: 10px;
+                }
 
                 img {
                     width: 21px;
@@ -72,13 +73,13 @@
                     text-align: left;
 
                     @media(max-width: 1300px) {
-                        font-size: 18px;
-                        line-height: 20px;
+                        font-size: 16px;
+                        line-height: 18px;
                     }
 
                     @media(max-width: 768px) {
-                        font-size: 16px;
-                        line-height: 18px;
+                        font-size: 14px;
+                        line-height: 16px;
                     }
                 }
             }
@@ -147,6 +148,9 @@
         display: flex;
         justify-content: end;
 
+        @media(max-width: 1300px) {
+            height: 250px;
+        }
         @media(max-width: 768px) {
             display: none;
         }
