@@ -40,7 +40,7 @@ const News = () => {
   return (
     <div className={styles.newsWrap} id='news'>
         <div className={styles.header}>
-          <h2>НОВОСТИ <br /> КЛУБА</h2>
+          <h2>НОВОСТИ КЛУБА</h2>
           <img src={BrandLine} alt="" />
         </div>
         {news && 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import LoaderScreen from "../../../assets/images/loader-screen.jpeg";
+// import LoaderScreen from "../../../assets/images/loader-screen.png";
+// import LoaderScreenMobile from "../../../assets/images/loader-screen-mobile.png";
 
 import MainScreen from "../MainScreen/MainScreen";
 import Services from "../Services/Services";
@@ -13,6 +14,8 @@ import Footer from "../../elements/Footer/Footer";
 import { useLocation } from 'react-router-dom';
 
 import ScrollTop from '../../../assets/images/scroll-top.svg';
+import LoaderScreen from '../LoaderScreen/LoaderScreen';
+import LoaderScreenMobile from '../LoaderScreen/LoaderScreenMobile';
 
 const AllScreens = () => {
   const location = useLocation()
@@ -46,7 +49,12 @@ const AllScreens = () => {
   }, [])
 
   useEffect(() => {
-    let timer = setTimeout(() => setShowLoader(false), 3500);
+    if (isShowLoader) document.querySelector('body').style.overflowY = 'hidden';
+    if (!isShowLoader) document.querySelector('body').style.overflowY = '';
+  }, [isShowLoader])
+
+  useEffect(() => {
+    let timer = setTimeout(() => setShowLoader(false), 5000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -54,7 +62,7 @@ const AllScreens = () => {
   return (
     <div>
       <div className="App">
-        {isShowLoader && <img src={LoaderScreen} className="loader" />}
+        {isShowLoader && (window.innerWidth > 768 ? <LoaderScreen /> : <LoaderScreenMobile /> )}
         <MainScreen />
         <Services />
         <TerritoryScheme />

@@ -1,9 +1,9 @@
 import React from 'react';
-import LogoIcon from '../../../assets/images/logo-color.svg';
+import LogoIcon from '../../../assets/images/mobile-logo-color.svg';
 
 const LogoColor = () => {
   return (
-    <div>
+    <div style={{zIndex: 50}}>
       <img src={LogoIcon} alt="" />
     </div>
   )

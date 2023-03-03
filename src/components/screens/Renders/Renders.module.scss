@@ -125,6 +125,14 @@
 
 .slider {
     margin-top: 40px;
+    div {
+        display: flex;
+        flex-direction: column;
+
+        .image {
+            object-fit: cover;
+        }
+    }
 }
 
 .title {
@@ -133,6 +141,7 @@
     font-size: 16px;
     line-height: 14px;
     text-transform: uppercase;
-    text-align-last: left;
+    text-align: left;
     padding: 0 0 10px 20px;
 }
+

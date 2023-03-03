@@ -8,8 +8,9 @@ import WhiteAnchor from "../../assets/images/white-anchor.svg";
 import BlueAnchor from "../../assets/images/blue-anchor.svg";
 import LogoColor from "../elements/LogoColor/LogoColor";
 
-import { ReactComponent as Logo } from '../../assets/images/logo.svg';
+// import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import { ReactComponent as FooterDecor } from '../../assets/images/footer-decor.svg';
+import Logo from '../elements/Logo/Logo';
 
 const Header = ({ isMainPage }) => {
 
@@ -18,6 +19,11 @@ const Header = ({ isMainPage }) => {
   const navigate = useNavigate();
 
   const [activeBurger, setActiveBurger] = useState(false);
+
+  useEffect(() => {
+    if (activeBurger) document.querySelector('body').style.overflowY = 'hidden';
+    if (!activeBurger) document.querySelector('body').style.overflowY = '';
+  }, [activeBurger])
 
   const scrollTo = (e, anchor) => {
     e.preventDefault();
@@ -37,6 +43,7 @@ const Header = ({ isMainPage }) => {
 
   useEffect(() => {
     if (location.state && location.state.anchor) {
+      console.log('object')
       const timer = setTimeout(() => {
         const element = document.getElementById(location.state.anchor);
         if (location.state.anchor === 'news') {
@@ -46,6 +53,7 @@ const Header = ({ isMainPage }) => {
               block: "start",
               inline: "nearest",
             });
+            location.state = null
           }
         } else {
           if (element) {
@@ -57,8 +65,10 @@ const Header = ({ isMainPage }) => {
             location.state = null
           }
         }
-      }, 1);
-      return () => clearTimeout(timer)
+      }, 10);
+      return () => {
+        clearTimeout(timer)
+      }
     }
   }, [location]);
 
@@ -157,7 +167,7 @@ const Header = ({ isMainPage }) => {
         :
 
         <div className={activeBurger ? `${styles.header} ${styles.header__active}` : styles.header} id="header" onClick={(() => {activeBurger ? setActiveBurger(false) : setActiveBurger(true)})}>
-          <Logo />
+          {activeBurger ? <LogoColor /> :  location.pathname.includes('/news') ? <LogoColor /> : <div></div>}
 
           <Burger
             active={activeBurger}

@@ -2,15 +2,17 @@ import React, { useEffect, useRef, useState } from "react";
 
 import styles from "./Renders.module.scss";
 
-import Smotrovaya from "../../../assets/images/renders/Smotrovaya_ploshadka.jpg";
-import Klubniy_dom from "../../../assets/images/renders/Klubniy_dom.jpg";
-import Mayak from "../../../assets/images/renders/Mayal.jpg";
-import Privetstvennaya_stela from "../../../assets/images/renders/Privetstvennaya_stela.jpg";
-import Zona_otdyha from "../../../assets/images/renders/Zona_otdyha.jpg";
-import kpp from "../../../assets/images/renders/kpp.jpg";
-
-import fullImg from "../../../assets/images/render1.png";
-import smallImg from "../../../assets/images/render2.png";
+import Protoka from "../../../assets/images/renders/Protoka.jpg";
+import Verh from "../../../assets/images/renders/TerritoriaVerh.jpg";
+import Angar from "../../../assets/images/renders/Angar.jpg";
+import Remont from "../../../assets/images/renders/Remont.jpg";
+import Mayak from "../../../assets/images/renders/Mayak.jpg";
+import Akvatoria from "../../../assets/images/renders/Akvatoria.jpg";
+import Stela from "../../../assets/images/renders/Stela.jpg";
+import Club from "../../../assets/images/renders/Club.jpg";
+import Otdyh1 from "../../../assets/images/renders/Otdyh1.jpg";
+import Otdyh2 from "../../../assets/images/renders/Otdyh2.jpg";
+import Vhod from "../../../assets/images/renders/vhod.jpg";
 
 import sups from "../../../assets/images/sup.svg";
 import blueWaves from "../../../assets/images/blue-waves.svg";
@@ -33,12 +35,17 @@ const Renders = () => {
   const [width, height] = UseWindowSize();
 
   const renders = [
-    { id: 1, title: "Зона отдыха", url: Zona_otdyha },
-    { id: 2, title: "Клубный дом", url: Klubniy_dom },
-    { id: 3, title: "Контрольно-пропускной пункт", url: kpp },
-    { id: 4, title: "Маяк", url: Mayak },
-    { id: 5, title: "Приветственная Стела", url: Privetstvennaya_stela },
-    { id: 6, title: "Смотровая площадка", url: Smotrovaya },
+    { id: 1, title: "Абаканская протока. Причал", url: Protoka },
+    { id: 2, title: "Территория сверху", url: Verh },
+    { id: 3, title: "Теплый ангар для круглогодичного хранения", url: Angar },
+    { id: 4, title: "Визит-центр", url: Remont },
+    { id: 5, title: "Въезд на территорию", url: Vhod },
+    { id: 6, title: "Смотровая площадка и маяк", url: Mayak },
+    { id: 7, title: "Акватория Абаканской протоки. Маяк", url: Akvatoria },
+    { id: 8, title: "Приветственная Стела", url: Stela },
+    { id: 9, title: "Клубный дом", url: Club },
+    { id: 10, title: "Зона отдыха", url: Otdyh1 },
+    { id: 11, title: "Зона отдыха", url: Otdyh2 },
   ];
 
   let settings = {
@@ -143,8 +150,10 @@ const Renders = () => {
         <Slider {...settings}>
           {renders.map((item) => (
             <div className={styles.slider} key={item.id}>
+              <div>
               <h3 className={styles.title}>{item.title}</h3>
               <img className={styles.image} src={item.url} alt={item.title} />
+              </div>
             </div>
           ))}
         </Slider>

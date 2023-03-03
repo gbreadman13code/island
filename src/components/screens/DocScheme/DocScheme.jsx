@@ -27,7 +27,7 @@ const DocScheme = () => {
       <div className={styles.wrap} id="docScheme">
       {isShowModal && <Modal withBG={true} close={() => setShowModal(false)} />}
         <div className={styles.map}>
-          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+          <div className={styles.head} style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
             <h2>СХЕМА ПРИЧАЛА</h2>
             <ButtonPrice text={"Рассчитать стоимость"} openModal={setShowModal} />
           </div>

@@ -16,7 +16,7 @@ export const sendform = async (data, isSuccess) => {
   }
   const csrftoken = getCookie("csrftoken");
 
-  const response = await fetch("http://80.78.246.206/api/v1/inquiry/", {
+  const response = await fetch("https://ostrovkrsk.ru/api/v1/inquiry/", {
     headers: {
       "Content-Type": "application/json",
       "X-CSRFToken": csrftoken,

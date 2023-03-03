@@ -20,6 +20,14 @@
     background: url('../../../assets/images/isolones.svg') center center no-repeat;
     background-size: cover;
 
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        width: 100%;
+        margin-top: 80px;
+
+        gap: 0px
+    }
+
     .legend {
         flex: 1.2;
         max-width: max-content;
@@ -49,6 +57,8 @@
                 margin-bottom: 23px;
 
                 img {
+                    width: 34px;
+                    height: 34px;
                 }
 
                 span {
@@ -59,12 +69,80 @@
                 }
             }
         }
+
+        @media (max-width: 768px) {
+            background-color: #fff;
+            width: 100%;
+
+
+            h2 {
+                color: rgba(0, 45, 89, 1);
+                font-size: 14px;
+                line-height: 16px;
+
+                font-weight: bold;
+
+                padding-bottom: 0;
+            }
+
+            ul {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); 
+
+                width: 100vw;
+                margin: 0;
+                padding: 20px 20px;
+
+                box-sizing: border-box;
+                li {
+                    // justify-content: start;
+                    margin-bottom: 8px;
+                    gap: 5px;
+                    span {
+                        font-size: 13px;
+                        line-height: 15px;
+                        font-weight: 400;
+
+                        color: rgba(0, 45, 89, 1);
+                        width: max-content;
+                    }
+                    img {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
     }
 
     .map {
         flex: 1.8;
-
         position: relative;
+
+        .head {
+            @media (max-width: 768px) {
+                h2 {
+                    margin-left: 0;
+                    color: rgba(0, 45, 89, 1);
+                font-size: 14px;
+                line-height: 16px;
+
+                font-weight: bold;
+
+                padding-bottom: 0;
+                padding-left: 29px;
+
+                &::before {
+                    margin-top: -2px;
+                }
+                }
+
+                button {
+                    display: none;
+                }
+            }
+        }
+
         h2 {
             color: #002D59;
             font-family: gotham;
@@ -72,15 +150,24 @@
             width: auto;
             display: flex;
             margin-left: 150px;
+            position: relative;
 
             &::before {
                 content: '';
                 display: block;
-                height: 16px;
-                margin-top: 2px;
-                width: 5px;
+                height: 20px;
+                // margin-top: 2px;
+                position: absolute;
+                top: 0;
+                left: -20px;
+                width: 16px;
                 background-color: #002D59;
-                margin-right: 5px;
+                background: url('../../../assets/images/blue-anchor.svg') center center no-repeat;
+                background-size: cover;
+            }
+
+            @media (max-width: 768px) {
+                margin-top: 5px;
             }
         }
         div {
@@ -90,10 +177,19 @@
         //         left: -110px;
         //         bottom: 100px;
         //     }
+            @media (max-width: 768px) {
+                overflow-x: scroll;
+            }
             .mapImg {
                 margin-top: 57px;
                 // max-height: 100%;
                 width: 100%;
+
+                @media (max-width: 768px) {
+                    height: 100%;
+                    width: auto;
+                    margin-top: 16px;
+                }
             }
         }
 

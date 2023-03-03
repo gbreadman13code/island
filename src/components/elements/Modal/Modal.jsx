@@ -5,8 +5,10 @@ import styles from "./Modal.module.scss";
 // import ActiveCheckbox from "../../../assets/images/activeCheckbox.svg";
 import { sendform } from "../../../functions/sendform";
 
-import { ReactComponent as EmptyCheckbox } from '../../../assets/images/emptyCheckbox.svg';
-import { ReactComponent as ActiveCheckbox } from '../../../assets/images/activeCheckbox.svg';
+import EmptyCheckbox from '../../../assets/images/emptyCheckbox.svg';
+import ActiveCheckbox from '../../../assets/images/activeCheckbox.svg';
+import MobileEmptyCheckbox from '../../../assets/images/MobileEmptyCheckBox.svg';
+import MobileActiveCheckbox from '../../../assets/images/MobileActiveCheckbox.svg';
 
 const Modal = ({ close, withBG }) => {
   const [name, setName] = useState();
@@ -104,11 +106,11 @@ const Modal = ({ close, withBG }) => {
                 onChange={() => setGarage(!garage)}
               />
               <img
-                src={garage ? <ActiveCheckbox /> : <EmptyCheckbox />}
+                src={window.innerWidth > 1000 ? (garage ? ActiveCheckbox : EmptyCheckbox) : (garage ? MobileActiveCheckbox : MobileEmptyCheckbox)}
                 alt=""
                 onClick={() => setGarage(!garage)}
               />
-              <label htmlFor="garage">Аренда места в ангаре</label>
+              <label onClick={() => setGarage(!garage)}>Аренда места в ангаре</label>
             </div>
             <div className={styles.checkbox}>
               <input
@@ -118,11 +120,11 @@ const Modal = ({ close, withBG }) => {
                 onChange={() => setDoc(!doc)}
               />
               <img
-                src={doc ? <ActiveCheckbox /> : <EmptyCheckbox />}
+                src={window.innerWidth > 1000 ? doc ? ActiveCheckbox : EmptyCheckbox : doc ? MobileActiveCheckbox : MobileEmptyCheckbox}
                 alt=""
                 onClick={() => setDoc(!doc)}
               />
-              <label htmlFor="doc">Аренда места причала</label>
+              <label onClick={() => setDoc(!doc)}>Аренда места причала</label>
             </div>
           </>
         )}

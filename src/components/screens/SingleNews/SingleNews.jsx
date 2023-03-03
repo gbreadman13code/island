@@ -41,14 +41,14 @@ const SingleNews = () => {
   return (
     <div className={styles.wrap}>
       <Container>
-        <Header />
+        <Header isMainPage={false} />
       </Container>
       {singleNews && (
         <div className={styles.content}>
           <Container>
             <div className={styles.news_header}>
               <p className={styles.title}>{singleNews.title}</p>
-              <p className={styles.back_button} onClick={goBack}><img src={BackArrow} alt="" /> Назад</p>
+              <p className={styles.back_button} onClick={goBack}><img src={BackArrow} alt="" /> <span>Назад</span></p>
             </div>
           </Container>
           <div className={styles.underline}></div>

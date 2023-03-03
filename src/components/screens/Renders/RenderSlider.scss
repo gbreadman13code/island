@@ -3,10 +3,13 @@
 
   h3 {
     font-family: gotham;
+    min-height: 30px;
   }
 
   img {
     height: 300px;
+    width: 100%;
+    object-fit: cover;
   }
 
   // outline: 2px solid red;

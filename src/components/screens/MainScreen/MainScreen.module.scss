@@ -10,7 +10,7 @@
 
     @media (max-width: 768px) {
         background-image: url('../../../assets/images/second-screen-bg.jpg');
-        background-position: 50% 30%;
+        background-position: 50% 0%;
         height: 95vh;
     }
 }
@@ -88,6 +88,7 @@
                 line-height: 15px;
             }
         }
+        margin-top: -20px;
     }
 
     @media (max-width: 768px) {
@@ -101,7 +102,7 @@
             align-items: center;
 
             svg {
-                width: 60%;
+                width: 80%;
             }
 
             p {

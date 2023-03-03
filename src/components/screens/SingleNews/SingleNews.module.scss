@@ -4,6 +4,10 @@
 
     min-height: 100vh;
 
+    overflow-x: hidden;
+
+    position: relative;
+
     .content {
         flex: 1 auto;
         position: relative;
@@ -24,6 +28,11 @@
                 font-family: gotham;
                 font-weight: 700;
                 text-transform: uppercase;
+
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                    line-height: 18px;
+                }
             }
 
             .back_button {
@@ -38,6 +47,16 @@
 
                 display: flex;
                 align-items: center;
+
+                @media (max-width: 768px) {
+                    span {
+                        display: none;
+                    }
+                    img {
+                        height: 22px;
+                    }
+                }
+                
 
                 img {
                     margin-right: 17px;
@@ -59,24 +78,43 @@
         .news_content {
             display: flex;
             gap: 45px;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
             .news_photo {
 
-
+                @media (max-width: 768px) {
+                    display: flex;
+                    justify-content: center;
+                }
                 img {
                     width: 316px;
                     height: 178px;
                     object-fit: cover;
                     object-position: center;
+
+                    @media (max-width: 768px) {
+                        width: 222px;
+                        height: 125px;
+                    }
                 }
             }
 
             .news_text {
-
+                @media (max-width: 768px) {
+                    margin-bottom: 54px;
+                }
                 p {
                     font-size: 17px;
                     line-height: 31px;
 
                     color: rgba(22, 51, 86, 1);
+
+                    @media (max-width: 768px) {
+                        font-size: 14px;
+                        line-height: 17px;
+                    }
                 }
 
                 a {
@@ -86,6 +124,11 @@
                     color: rgba(22, 51, 86, 1);
 
                     text-decoration: underline;
+
+                    @media (max-width: 768px) {
+                        font-size: 14px;
+                        line-height: 17px;
+                    }
                 }
             }
         }
@@ -96,6 +139,10 @@
             height: 41px;
 
             position: relative;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
 
             img {
                 position: absolute;

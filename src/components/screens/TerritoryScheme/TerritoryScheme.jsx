@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./TerritoryScheme.module.scss";
 
 import Map from "../../../assets/images/map.png";
+import MobileMap from "../../../assets/images/mapMob.png";
 
 
 // import { ReactComponent as Visit } from "../../../assets/images/territory-scheme-icons/visit.svg";
@@ -36,8 +37,15 @@ import IconLabel from "./IconLabel";
 const TerritoryScheme = () => {
   const [iconsWidth, setIconsWidth] = useState(41);
   const [hoveredIcon, setHoveredIcon] = useState();
+  const [mobileWidth, setMobileWidth] = useState('100%')
 
   const mapWidth = useRef();
+  const MobileMapWidth = document.getElementById('MobileMapWidth')
+
+  useEffect(() => {
+    if (!MobileMapWidth) return
+    setMobileWidth(MobileMapWidth.clientWidth)
+  }, [MobileMapWidth])
 
   const resize = () => {
     if (!mapWidth || !mapWidth.current) return;
@@ -151,8 +159,9 @@ const TerritoryScheme = () => {
 
         <div className={styles.map}>
           <div>
-            <div className={styles.map_container}>
-              <img className={styles.mapImg} src={Map} alt="" ref={mapWidth} />
+            <div className={styles.map_container} style={window.innerWidth <= 768 ? {width: mobileWidth} : {}}>
+              {window.innerWidth > 1000 ? <img className={styles.mapImg} src={Map} alt="" ref={mapWidth} /> : <img src={MobileMap} id={'MobileMapWidth'} />}
+              
 
               <div
                 className={
@@ -163,7 +172,7 @@ const TerritoryScheme = () => {
                 onMouseOver={(e) => mapIconsHover("garage")}
                 onMouseOut={() => setHoveredIcon()}
               >
-                <img src={map_garage} style={{ width: iconsWidth }} alt="" />
+                <img src={map_garage} style={window.innerWidth > 768? { width: iconsWidth } : {}} alt="" />
                 <IconLabel text={"Теплый ангар"} flag={hoveredIcon} />
               </div>
               <div
@@ -175,7 +184,7 @@ const TerritoryScheme = () => {
                 onMouseOver={(e) => mapIconsHover("services")}
                 onMouseOut={() => setHoveredIcon()}
               >
-                <img src={map_services} style={{ width: iconsWidth }} alt="" />
+                <img src={map_services} style={window.innerWidth > 768? { width: iconsWidth } : {}} alt="" />
                 <IconLabel text={"Ремонт <br /> и сервис"} flag={hoveredIcon} />
               </div>
               <div
@@ -187,7 +196,7 @@ const TerritoryScheme = () => {
                 onMouseOver={(e) => mapIconsHover("visit")}
                 onMouseOut={() => setHoveredIcon()}
               >
-                <img src={map_visit} style={{ width: iconsWidth }} alt="" />
+                <img src={map_visit} style={window.innerWidth > 768? { width: iconsWidth } : {}} alt="" />
                 <IconLabel text={"Визит–центр"} flag={hoveredIcon} />
               </div>
               <div
@@ -197,7 +206,7 @@ const TerritoryScheme = () => {
                 onMouseOver={(e) => mapIconsHover("kpp")}
                 onMouseOut={() => setHoveredIcon()}
               >
-                <img src={map_kpp} style={{ width: iconsWidth }} alt="" />
+                <img src={map_kpp} style={window.innerWidth > 768? { width: iconsWidth } : {}} alt="" />
                 <IconLabel text={"КПП"} flag={hoveredIcon} />
               </div>
               <div
@@ -209,7 +218,7 @@ const TerritoryScheme = () => {
                 onMouseOver={(e) => mapIconsHover("anchor")}
                 onMouseOut={() => setHoveredIcon()}
               >
-                <img src={map_anchor} style={{ width: iconsWidth }} alt="" />
+                <img src={map_anchor} style={window.innerWidth > 768? { width: iconsWidth } : {}} alt="" />
                 <IconLabel text={"Причал"} flag={hoveredIcon} />
               </div>
               <div className={
@@ -223,7 +232,7 @@ const TerritoryScheme = () => {
               <img
                 src={map_slip}
 
-                style={{ width: iconsWidth }}
+                style={window.innerWidth > 768? { width: iconsWidth } : {}}
                 alt=""
               />
                 <IconLabel text={"Оборудованный <br/> слип"} flag={hoveredIcon} />
@@ -240,7 +249,7 @@ const TerritoryScheme = () => {
               <img
                 src={map_seing}
 
-                style={{ width: iconsWidth }}
+                style={window.innerWidth > 768? { width: iconsWidth } : {}}
                 alt=""
 
               />
@@ -258,7 +267,7 @@ const TerritoryScheme = () => {
               <img
                 src={map_club}
 
-                style={{ width: iconsWidth }}
+                style={window.innerWidth > 768? { width: iconsWidth } : {}}
                 alt=""
 
               />
@@ -274,7 +283,7 @@ const TerritoryScheme = () => {
               <img
                 src={map_gas}
 
-                style={{ width: iconsWidth }}
+                style={window.innerWidth > 768? { width: iconsWidth } : {}}
                 alt=""
 
               />

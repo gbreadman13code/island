@@ -20,12 +20,12 @@ const Footer = () => {
         <Logo />
         <div className={styles.line_between}></div>
         <ul>
-          <li> <img src={Phone} alt="" /> <a href="tel:+73912546200">+7 (391) 254-62-00</a></li>
+          <li> <img src={Phone} alt="" /> <a href="tel:+73912546200">+7 (391) 25-46-200</a></li>
           <li> <img src={Email} alt="" /> <a href="mailto:marketing@ostrovkrsk.ru">marketing@ostrovkrsk.ru</a></li>
-          <li> <img src={Location} alt="" /> <a>г. Красноярск, <br /> ул. остров Отдыха</a></li>
+          <li> <img src={Location} alt="" /> <a>г. Красноярск, <br /> остров Отдыха</a></li>
           <div className={styles.socials}>
             <li><a href="https://t.me/ostrovkrsk" target='_black'><img src={Telegram} alt="" /></a></li>
-            <li><a href="#"  target='_black'><img src={Whatsap} alt="" /></a></li>
+            <li><a href="https://wa.me/79631914789"  target='_black'><img src={Whatsap} alt="" /></a></li>
           </div>
         </ul>
       </div>

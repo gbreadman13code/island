@@ -1,0 +1,479 @@
+@keyframes waving {
+    from {
+        transform: scale(1);
+    } to {
+        transform: scale(1, 0.5);
+    }
+}
+@keyframes boat-waving {
+    from {
+        transform: rotate(5deg) translateY(5px);
+        transform-origin: center center;
+    } to {
+        transform: rotate(-5deg) translateY(-5px);
+        transform-origin: center center;
+    }
+}
+@keyframes slide_to_left {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    } to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slide_to_right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    } to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+.wrap {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: #002D59;
+
+    z-index: 100;
+    // padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .graphics {
+        align-items: end;
+        display: grid;
+        grid-template-columns: 1.8fr 1fr 1.8fr;
+
+        position: relative;
+
+        .boat {
+            position: absolute;
+            transform-origin: center center;
+            transform-box: fill-box;
+
+            img {
+                transform-origin: 100px 4px;
+
+                transform: rotate(0deg) translateY(0px);
+                animation-name: boat-waving;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;  
+                animation-direction: alternate;
+            }
+
+            
+        }
+
+        .boatRight {
+            right: 15%;
+            bottom: 47%;
+            width: 6%;
+            height: auto;
+            animation-name: slide_to_right;
+            animation-duration: 2s;
+            z-index: 2;
+            img {
+                width: 100%;
+                height: auto;
+                animation-delay: 1s;
+            }
+        }
+
+        .boatLeft1 {
+            left: 5%;
+            bottom: 31%;
+            width: 6%;
+            height: auto;
+            animation-name: slide_to_left;
+            animation-duration: 2s;
+            z-index: 2;
+
+            img {
+                width: 100%;
+                animation-delay: 0.5s;
+                height: auto;
+            }
+        }
+
+        .boatLeft2 {
+            left: 25%;
+            bottom: 21%;
+            width: 7%;
+            height: auto;
+            animation-name: slide_to_left;
+            animation-duration: 2s;
+            z-index: 2;
+
+            img {
+                width: 100%;
+                height: auto;
+                animation-delay: 0s;
+            }
+        }
+
+        .waves_left {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            animation-name: slide_to_left;
+            animation-duration: 1s;
+            padding-bottom: 6%;
+            svg {
+                animation-name: waving;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;  
+                animation-direction: alternate;
+                width: 100%;
+                height: auto;
+
+                &.wave1 {
+                    animation-delay: 0.0s;
+                    width: 97%;
+                }
+                &.wave2 {
+                    animation-delay: 0.5s;
+                    width: 97%;
+                }
+                &.wave3 {
+                    animation-delay: 1.2s;
+                    width: 98%;
+                }
+                &.wave4 {
+                    animation-delay: 1s;
+                    width: 100%;
+                }
+                &.wave5 {
+                    animation-delay: 0.5s;
+                    width: 103%;
+                }
+            }
+        }
+        .logo {
+            width: 100%;
+            margin-top: 40px;
+            animation-name: fade-in;
+            animation-delay: 1s;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            svg {
+                animation: none;
+                width: 100%;
+                height: auto;
+            }
+        }
+        .waves_right {
+            animation-name: slide_to_right;
+            animation-duration: 1s;
+            padding-bottom: 6%;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            svg {
+                animation-name: waving;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;  
+                animation-direction: alternate;
+                width: 100%;
+                height: auto;
+
+                &.wave1 {
+                    animation-delay: 0.0s;
+                    width: 97%;
+                }
+                &.wave2 {
+                    animation-delay: 0.5s;
+                    width: 97%;
+                }
+                &.wave3 {
+                    animation-delay: 1.2s;
+                    width: 98%;
+                }
+                &.wave4 {
+                    animation-delay: 1s;
+                    width: 100%;
+                }
+                &.wave5 {
+                    animation-delay: 0.5s;
+                    width: 103%;
+                }
+            }
+        }
+    }
+
+    .opened {
+        margin-top: 40px;
+        animation-name: fade-in;
+        animation-delay: 1s;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 110px;
+
+
+        div {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+
+            background-color: #D9D9D9;
+        }
+        p {
+            font-size: 46px;
+            line-height: 46px;
+    
+            text-transform: uppercase;
+    
+            color: #FFFFFF;
+
+            margin: 0 22px;
+        }
+    }
+
+    
+}
+
+.wrapMobile {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: #002D59;
+
+    z-index: 1000;
+    // padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .graphics {
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+
+        .boat {
+            position: absolute;
+            transform-origin: center center;
+            transform-box: fill-box;
+
+            img {
+                transform-origin: 100px 4px;
+
+                transform: rotate(0deg) translateY(0px);
+                animation-name: boat-waving;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;  
+                animation-direction: alternate;
+            }
+
+            
+        }
+
+        .boatRight {
+            right: 15%;
+            bottom: 21%;
+            width: 13%;
+            height: auto;
+            animation-name: slide_to_right;
+            animation-duration: 2s;
+            z-index: 2;
+            img {
+                width: 100%;
+                height: auto;
+                animation-delay: 1s;
+            }
+        }
+
+        .boatLeft1 {
+            left: 5%;
+            bottom: 15%;
+            width: 13%;
+            height: auto;
+            animation-name: slide_to_left;
+            animation-duration: 2s;
+            z-index: 2;
+
+            img {
+                width: 100%;
+                animation-delay: 0.5s;
+                height: auto;
+            }
+        }
+
+        .boatLeft2 {
+            left: 25%;
+            bottom: 9%;
+            width: 13%;
+            height: auto;
+            animation-name: slide_to_left;
+            animation-duration: 2s;
+            z-index: 2;
+
+            img {
+                width: 100%;
+                height: auto;
+                animation-delay: 0s;
+            }
+        }
+
+        .waves_left {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            animation-name: slide_to_left;
+            animation-duration: 1s;
+            padding-bottom: 6%;
+            svg {
+                animation-name: waving;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;  
+                animation-direction: alternate;
+                width: 100%;
+                height: auto;
+
+                &.wave1 {
+                    animation-delay: 0.0s;
+                    // width: 97%;
+                }
+                &.wave2 {
+                    animation-delay: 0.5s;
+                    // width: 97%;
+                }
+                &.wave3 {
+                    animation-delay: 1.2s;
+                    // width: 98%;
+                }
+                &.wave4 {
+                    animation-delay: 1s;
+                    // width: 100%;
+                }
+                &.wave5 {
+                    animation-delay: 0.5s;
+                    // width: 103%;
+                }
+            }
+        }
+        .logo {
+            width: 100%;
+            margin-top: 40px;
+            animation-name: fade-in;
+            animation-delay: 1s;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            svg {
+                animation: none;
+                width: 45%;
+                height: auto;
+            }
+        }
+        .waves_right {
+            animation-name: slide_to_right;
+            animation-duration: 1s;
+            padding-bottom: 6%;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            svg {
+                animation-name: waving;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;  
+                animation-direction: alternate;
+                width: 103%;
+                height: auto;
+
+                &.wave1 {
+                    animation-delay: 0.0s;
+                    // width: 97%;
+                }
+                &.wave2 {
+                    animation-delay: 0.5s;
+                    // width: 97%;
+                }
+                &.wave3 {
+                    animation-delay: 1.2s;
+                    // width: 98%;
+                }
+                &.wave4 {
+                    animation-delay: 1s;
+                    // width: 100%;
+                }
+                &.wave5 {
+                    animation-delay: 0.5s;
+                    // width: 103%;
+                }
+            }
+        }
+    }
+
+    .opened {
+        margin-top: 70px;
+        animation-name: fade-in;
+        animation-delay: 1s;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: 45px;
+
+        div {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+
+            background-color: #D9D9D9;
+        }
+        p {
+            font-size: 19px;
+            line-height: 19px;
+    
+            text-transform: uppercase;
+    
+            color: #FFFFFF;
+
+            margin: 0 22px;
+        }
+    }
+
+ 
+}
