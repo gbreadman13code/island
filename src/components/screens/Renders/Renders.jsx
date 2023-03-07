@@ -44,7 +44,7 @@ const Renders = () => {
   }, [width])
 
   const renders = [
-    { id: 1, title: <span>Проект реализуется по инициативе губернатора Красноярского края А.В. Усса и при поддержке золотодобывающей компании <a href='https://polyus.com/ru/' target='_blank'>"Полюс"</a></span>, url: logoPolus},
+    { id: 1, title: <span>Проект реализуется по инициативе губернатора Красноярского края А.В.&nbsp;Усса и при поддержке золотодобывающей компании <a href='https://polyus.com/ru/' target='_blank'>"Полюс"</a></span>, url: logoPolus},
     { id: 2, title: "Абаканская протока. Причал", url: Protoka },
     { id: 3, title: "Территория сверху", url: Verh },
     { id: 4, title: "Теплый ангар для круглогодичного хранения", url: Angar },
