@@ -56,6 +56,30 @@
             margin-left: 90px;
             margin-top: 30px;
             margin-bottom: 94px;
+            line-height: 1.2;
+        }
+
+        a {
+            position: relative;
+            color: black;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 85%;
+                height: 1px;
+                background-color: black;
+                transition: width .3s ease;
+            }
+
+            // &:hover {
+            //     &::after {
+            //         width: 85%;
+            //     }
+            // }
         }
     }
 
@@ -125,6 +149,7 @@
 
 .slider {
     margin-top: 40px;
+
     div {
         display: flex;
         flex-direction: column;
@@ -139,9 +164,32 @@
     font-family: gotham;
     font-weight: 400;
     font-size: 16px;
-    line-height: 14px;
+    line-height: 1.2;
     text-transform: uppercase;
     text-align: left;
     padding: 0 0 10px 20px;
+
+    a {
+        position: relative;
+        color: black;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            height: 1px;
+            background-color: black;
+            transition: width .3s ease;
+        }
+
+        &:active {
+            &::after {
+                width: 85%;
+            }
+        }
+    }
 }
 

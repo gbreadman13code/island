@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 import styles from "./Renders.module.scss";
 
+import Polus from "../../../assets/images/renders/render_polus.jpg";
+import Polus_mobile from "../../../assets/images/renders/render_polus_mobile.jpg";
 import Protoka from "../../../assets/images/renders/Protoka.jpg";
 import Verh from "../../../assets/images/renders/TerritoriaVerh.jpg";
 import Angar from "../../../assets/images/renders/Angar.jpg";
@@ -13,6 +15,7 @@ import Club from "../../../assets/images/renders/Club.jpg";
 import Otdyh1 from "../../../assets/images/renders/Otdyh1.jpg";
 import Otdyh2 from "../../../assets/images/renders/Otdyh2.jpg";
 import Vhod from "../../../assets/images/renders/vhod.jpg";
+
 
 import sups from "../../../assets/images/sup.svg";
 import blueWaves from "../../../assets/images/blue-waves.svg";
@@ -29,23 +32,30 @@ const Renders = () => {
   const [imgWidth, setImgWidth] = useState(900);
   const [mainSlide, setMainSlide] = useState();
   const [miniSlide, setMiniSlide] = useState();
-  // console.log(miniSlide)
+
   const [isFullImgLoaded, setFullImgLoaded] = useState(false);
   const fullImgSize = useRef();
-  const [width, height] = UseWindowSize();
+  const [width] = UseWindowSize();
+
+  const [logoPolus, setLogoPolus] = useState(Polus);
+
+  useEffect(() => {
+    setLogoPolus(width < 450 ? Polus_mobile : Polus);
+  }, [width])
 
   const renders = [
-    { id: 1, title: "Абаканская протока. Причал", url: Protoka },
-    { id: 2, title: "Территория сверху", url: Verh },
-    { id: 3, title: "Теплый ангар для круглогодичного хранения", url: Angar },
-    { id: 4, title: "Визит-центр", url: Remont },
-    { id: 5, title: "Въезд на территорию", url: Vhod },
-    { id: 6, title: "Смотровая площадка и маяк", url: Mayak },
-    { id: 7, title: "Акватория Абаканской протоки. Маяк", url: Akvatoria },
-    { id: 8, title: "Приветственная Стела", url: Stela },
-    { id: 9, title: "Клубный дом", url: Club },
-    { id: 10, title: "Зона отдыха", url: Otdyh1 },
-    { id: 11, title: "Зона отдыха", url: Otdyh2 },
+    { id: 1, title: <span>Проект реализуется по инициативе губернатора Красноярского края А.В. Усса и при поддержке золотодобывающей компании <a href='https://polyus.com/ru/' target='_blank'>"Полюс"</a></span>, url: logoPolus},
+    { id: 2, title: "Абаканская протока. Причал", url: Protoka },
+    { id: 3, title: "Территория сверху", url: Verh },
+    { id: 4, title: "Теплый ангар для круглогодичного хранения", url: Angar },
+    { id: 5, title: "Визит-центр", url: Remont },
+    { id: 6, title: "Въезд на территорию", url: Vhod },
+    { id: 7, title: "Смотровая площадка и маяк", url: Mayak },
+    { id: 8, title: "Акватория Абаканской протоки. Маяк", url: Akvatoria },
+    { id: 9, title: "Приветственная Стела", url: Stela },
+    { id: 10, title: "Клубный дом", url: Club },
+    { id: 11, title: "Зона отдыха", url: Otdyh1 },
+    { id: 12, title: "Зона отдыха", url: Otdyh2 },
   ];
 
   let settings = {
@@ -104,9 +114,6 @@ const Renders = () => {
   return (
     <>
     {width > 768 ?
-
-
-
       <div className={styles.wrap}>
         {mainSlide && (
           <div className={styles.fullImg}>
@@ -151,8 +158,8 @@ const Renders = () => {
           {renders.map((item) => (
             <div className={styles.slider} key={item.id}>
               <div>
-              <h3 className={styles.title}>{item.title}</h3>
-              <img className={styles.image} src={item.url} alt={item.title} />
+                <h3 className={styles.title}>{item.title}</h3>
+                <img className={styles.image} src={item.url} alt={item.title} />
               </div>
             </div>
           ))}
